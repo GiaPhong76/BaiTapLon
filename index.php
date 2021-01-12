@@ -7,6 +7,18 @@
     <link rel="stylesheet" href="style.css">
 </head> 
 <body>
+    <?php   
+        include 'connect.php';
+        $sql="select * from team where id=1";
+        if($result=mysqli_query($conn,$sql)){
+            $data=mysqli_fetch_all($result);
+          }
+        $idteam=$data[0][0];
+        $sql="select * from member where idteam=$idteam";
+        if($result=mysqli_query($conn,$sql)){
+            $data=mysqli_fetch_all($result);
+          }
+    ?>
 <div class="scroll-up-btn">
         <i class="fas fa-angle-up"></i>
     </div>
