@@ -46,6 +46,11 @@ $(document).ready(function() {
     $('.navbar .menu li a').click(function() {
         $('html').css("scrollBehavior", "smooth");
     });
+    //Hiện nút menu
+    $('.menu-btn').click(function() {
+        $('.navbar .menu').toggleClass("active");
+        $('.menu-btn i').toggleClass("active");
+    });
     //Hiển thị thành viên 
     $('.carousel').owlCarousel({
         margin: 20,
