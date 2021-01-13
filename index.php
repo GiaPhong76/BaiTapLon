@@ -110,11 +110,102 @@
                     <div class="box">
                         <i class="fas fa-code"></i>
                         <div class="text">Thiết kế ứng dụng</div>
-                        <p></p>
+                            <p></p>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Kỹ năng -->
+    <section class="skills" id="skills">
+        <div class="max-width">
+            <h2 class="title">Kỹ năng của chúng tôi</h2>
+            <div class="skills-content">
+                <div class="column left">
+                    <div class="text">Kinh nghiệm sáng tạo của chúng tôi</div>
+                    <ul style="list-style-position: inside;">
+                        <li>Chịu trách nhiệm làm việc với nhiều dự án cùng lúc, thiết kế các trang web hấp dẫn, tương tác hàng ngày với các bạn thiết kế đồ họa, back-end developer và nhóm tiếp thị.<br></li>
+                        <li>Phát triển và duy trì chức năng front-end của các trang web.<br></li>
+                        <li>Tham gia thảo luận với khách hàng để làm rõ những gì họ muốn.<br></li>
+                        <li>Thiết kế prototypes cho ứng dụng và trang web.<br></li>
+                    </ul>
+                    <a href="#">Đọc thêm</a>
+                </div>
+                <div class="column right">
+                    <div class="text">Kỹ năng </div>
+                    <div class="bars">
+                        <div class="info">
+                            <span>HTML</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="line html"></div>
+                    </div>
+                    <div class="bars">
+                        <div class="info">
+                            <span>CSS</span>
+                            <span>60%</span>
+                        </div>
+                        <div class="line css"></div>
+                    </div>
+                    <div class="bars">
+                        <div class="info">
+                            <span>JavaScript</span>
+                            <span>80%</span>
+                        </div>
+                        <div class="line js"></div>
+                    </div>
+                    <div class="bars">
+                        <div class="info">
+                            <span>PHP</span>
+                            <span>50%</span>
+                        </div>
+                        <div class="line php"></div>
+                    </div>
+                    <div class="bars">
+                        <div class="info">
+                            <span>MySQL</span>
+                            <span>70%</span>
+                        </div>
+                        <div class="line mysql"></div>
                     </div>
                 </div>
             </div>
         </div>
+    </section>
+    <!-- Nhóm -->
+    <section class="teams" id="teams">
+        <div class="max-width">
+            <h2 class="title">NHÓM CỦA CHÚNG TÔI</h2>
+            <div class="carousel owl-carousel">
+                <div class="card">
+                    <div class="box">
+                        <img src="images/Phong.jpg" alt="">
+                        <div class="text">Hà Gia Phong </div>
+                        <p></p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="box">
+                        <img src="images/Quang.jpg" alt="">
+                        <div class="text">Mai Vinh Quang</div>
+                        <p></p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="box">
+                        <img src="images/Quang.jpg" alt="">
+                        <div class="text">Nguyễn Thanh Tùng</div>
+                        <p></p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="box">
+                        <img src="images/Phong.jpg" alt="">
+                        <div class="text">Đinh Tất Hiển </div>
+                        <p></p>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
     <script src="main.js"></script>
