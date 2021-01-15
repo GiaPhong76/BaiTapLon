@@ -14,19 +14,15 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
 </head> 
 <body>
-    <?php   
+<?php   
         include 'connect.php';
-        $sql="select * from team where id=1";
-        if($result=mysqli_query($conn,$sql)){
-            $data=mysqli_fetch_all($result);
-          }
-        $idteam=$data[0][0];
+        $idteam=1;
         $sql="select * from member where idteam=$idteam";
         if($result=mysqli_query($conn,$sql)){
-            $data=mysqli_fetch_all($result);
-          }
+            $member=mysqli_fetch_all($result);
+        }
     ?>
-<div class="scroll-up-btn">
+    <div class="scroll-up-btn">
         <i class="fas fa-angle-up"></i>
     </div>
     <nav class="navbar">
@@ -51,33 +47,32 @@
         <div class="max-width">
             <div class="home-content">
                 <div class="text-1">Xin chào, chúng tôi là: </div>
-                <div class="text-2">Mai Vinh Quang,</div>
-                <div class="text-2">Hà Gia Phong </div>
+                <div class="text-2"><?php echo $member[0][2]?>,</div>
+                <div class="text-2"><?php echo $member[1][2]?> </div>
                 <div class="text-3">Chúng tôi đang là <span class="typing"></span></div>
                 <a href="#contact">Liên hệ với chúng tôi</a>
             </div>
         </div>
     </section>
 
-    <!-- Trang giới thiệu -->
+    <!-- Trang giới thiệu  -->
     <section class="about" id="about">
         <div class="max-width">
             <h2 class="title">GIỚI THIỆU</h2>
             <div class="about-content1 about-content">
-                <div class="column left">
-                    <img src="images/Quang.jpg" alt="">
+                <div class="column left" >
+                    <img src="images/Quang.jpg"  alt="">
                 </div>
                 <div class="column right">
-                    <div class="text">Tôi là Quang và tôi là <span class="typing-2"></span></div>
-                    <p></p>
+                    <div class="text">Tôi là <?php echo $member[0][2]?> và tôi là <span class="typing-2"></span></div>
+                    <p><?php echo $member[0][6]?></p>
                     <a href="#">Tải xuống CV</a>
                 </div>
             </div>
             <div class="about-content2 about-content">
-                
                 <div class="column left">
-                    <div class="text">Tôi là Phong và tôi là <span class="typing-3"></span></div>
-                    <p></p>
+                    <div class="text">Tôi là <?php echo $member[1][2]?> và tôi là <span class="typing-3"></span></div>
+                    <p><?php echo $member[1][6]?></p>
                     <a href="#">Tải xuống CV</a>
                 </div>
                 <div class="column right">
@@ -87,7 +82,13 @@
         </div>
     </section>
 
-    <!-- Dịch vụ  -->
+    <?php   
+        $sql="select * from services where idteam=$idteam";
+        if($result=mysqli_query($conn,$sql)){
+            $services=mysqli_fetch_all($result);
+        }
+    ?>
+    <!-- Trang dịch vụ  -->
     <section class="services" id="services">
         <div class="max-width">
             <h2 class="title">DỊCH VỤ CỦA CHÚNG TÔI</h2>
@@ -95,27 +96,35 @@
                 <div class="card">
                     <div class="box">
                         <i class="fas fa-paint-brush"></i>
-                        <div class="text">Thiết kế Web</div>
-                        <p></p>
+                        <div class="text"><?php echo $services[0][1] ?></div>
+                        <p><?php echo $services[0][2] ?></p>
                     </div>
                 </div>
                 <div class="card">
                     <div class="box">
                         <i class="fas fa-chart-line"></i>
-                        <div class="text">Quảng cáo </div>
-                        <p></p>
+                        <div class="text"><?php echo $services[1][1] ?> </div>
+                        <p><?php echo $services[1][2] ?></p>
                     </div>
                 </div>
                 <div class="card">
                     <div class="box">
                         <i class="fas fa-code"></i>
-                        <div class="text">Thiết kế ứng dụng</div>
-                            <p></p>
-                        </div>
+                        <div class="text"><?php echo $services[2][1] ?></div>
+                        <p><?php echo $services[2][2] ?></p>
+                    </div>
                 </div>
             </div>
         </div>
+        </div>
     </section>
+
+    <?php   
+        $sql="select * from skill where idteam=$idteam";
+        if($result=mysqli_query($conn,$sql)){
+            $skill=mysqli_fetch_all($result);
+        }
+    ?>
     <!-- Kỹ năng -->
     <section class="skills" id="skills">
         <div class="max-width">
@@ -136,43 +145,60 @@
                     <div class="bars">
                         <div class="info">
                             <span>HTML</span>
-                            <span>90%</span>
+                            <span><?php echo $skill[0][1] ?>%</span>
                         </div>
                         <div class="line html"></div>
                     </div>
                     <div class="bars">
                         <div class="info">
                             <span>CSS</span>
-                            <span>60%</span>
+                            <span><?php echo $skill[0][2] ?>%</span>
                         </div>
                         <div class="line css"></div>
                     </div>
                     <div class="bars">
                         <div class="info">
                             <span>JavaScript</span>
-                            <span>80%</span>
+                            <span><?php echo $skill[0][3] ?>%</span>
                         </div>
                         <div class="line js"></div>
                     </div>
                     <div class="bars">
                         <div class="info">
                             <span>PHP</span>
-                            <span>50%</span>
+                            <span><?php echo $skill[0][4] ?>%</span>
                         </div>
                         <div class="line php"></div>
                     </div>
                     <div class="bars">
                         <div class="info">
                             <span>MySQL</span>
-                            <span>70%</span>
+                            <span><?php echo $skill[0][5] ?>%</span>
                         </div>
                         <div class="line mysql"></div>
                     </div>
                 </div>
             </div>
+            <style>
+                .skills-content .right .html::before{
+                    width: <?php echo $skill[0][1] ?>%; 
+                }
+                .skills-content .right .css::before{
+                    width: <?php echo $skill[0][2] ?>%;
+                }
+                .skills-content .right .js::before{
+                    width: <?php echo $skill[0][3] ?>%;
+                }
+                .skills-content .right .php::before{
+                    width: <?php echo $skill[0][4] ?>%;
+                }
+                .skills-content .right .mysql::before{
+                    width: <?php echo $skill[0][5] ?>%;
+                }   
+            </style>
         </div>
     </section>
-    <!-- Nhóm -->
+    <!-- Trang nhóm  -->
     <section class="teams" id="teams">
         <div class="max-width">
             <h2 class="title">NHÓM CỦA CHÚNG TÔI</h2>
@@ -180,36 +206,29 @@
                 <div class="card">
                     <div class="box">
                         <img src="images/Phong.jpg" alt="">
-                        <div class="text">Hà Gia Phong </div>
+                        <div class="text"><?php echo $member[1][2]?></div>
                         <p></p>
                     </div>
                 </div>
                 <div class="card">
                     <div class="box">
                         <img src="images/Quang.jpg" alt="">
-                        <div class="text">Mai Vinh Quang</div>
-                        <p></p>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="box">
-                        <img src="images/Quang.jpg" alt="">
-                        <div class="text">Nguyễn Thanh Tùng</div>
-                        <p></p>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="box">
-                        <img src="images/Phong.jpg" alt="">
-                        <div class="text">Đinh Tất Hiển </div>
+                        <div class="text"><?php echo $member[0][2]?></div>
                         <p></p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-     <!-- contact section start -->
-     <section class="contact" id="contact">
+
+    <?php   
+        $sql="select * from team where id=$idteam";
+        if($result=mysqli_query($conn,$sql)){
+            $contact=mysqli_fetch_all($result);
+        }
+    ?>
+    <!-- Trang liên hệ  -->
+    <section class="contact" id="contact">
         <div class="max-width">
             <h2 class="title">Liên hệ với chúng tôi</h2>
             <div class="contact-content">
@@ -221,21 +240,21 @@
                             <i class="fas fa-user-friends"></i>
                             <div class="info">
                                 <div class="head">Nhóm</div>
-                                <div class="sub-title">SuperMan Team</div>
+                                <div class="sub-title"><?php echo $contact[0][1] ?></div>
                             </div>
                         </div>
                         <div class="row">
                             <i class="fas fa-map-marker-alt"></i>
                             <div class="info">
                                 <div class="head">Địa chỉ</div>
-                                <div class="sub-title">175 Tây Sơn, Đống Đa, Hà Nội</div>
+                                <div class="sub-title"><?php echo $contact[0][2] ?></div>
                             </div>
                         </div>
                         <div class="row">
                             <i class="fas fa-envelope"></i>
                             <div class="info">
                                 <div class="head">Email</div>
-                                <div class="sub-title">supermanteam@gmail.com</div>
+                                <div class="sub-title"><?php echo $contact[0][3] ?></div>
                             </div>
                         </div>
                     </div>
@@ -245,19 +264,19 @@
                     <form action="#">
                         <div class="fields">
                             <div class="field name">
-                                <input type="text" placeholder="Tên" required>
+                                <input id="yourname" type="text" placeholder="Tên" required>
                             </div>
                             <div class="field email">
-                                <input type="email" placeholder="Email" required>
+                                <input id="email" type="email" placeholder="Email" required>
                             </div>
                         </div>
                         <div class="field">
-                            <input type="text" placeholder="Tiêu đề" required>
+                            <input id="subject" type="text" placeholder="Tiêu đề" required>
                         </div>
                         <div class="field textarea">
-                            <textarea cols="30" rows="10" placeholder="Tin nhắn..." required></textarea>
+                            <textarea id="message" cols="30" rows="10" placeholder="Tin nhắn..." required></textarea>
                         </div>
-                        <div class="button">
+                        <div class="button" id="send">
                             <button type="submit">Gửi</button>
                         </div>
                     </form>
@@ -265,7 +284,8 @@
             </div>
         </div>
     </section>
-    <!-- footer section start -->
+    
+    <!-- Thanh cuối trang  -->
     <footer>
         <span>Created By <a href="https://www.facebook.com/quang.mai.k8/">Mai Vinh Quang </a> | <a href="https://www.facebook.com/giaphong.ha.12/">Hà Gia Phong</a></span>
     </footer>
