@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,20 +8,27 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="./jquery-3.5.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.11/typed.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
-</head> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" ></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="./bootstrap-waitingfor.min.js"></script>
+
+</head>
+
 <body>
-<?php   
-        include 'connect.php';
-        $idteam=1;
-        $sql="select * from member where idteam=$idteam";
-        if($result=mysqli_query($conn,$sql)){
-            $member=mysqli_fetch_all($result);
-        }
+    <?php
+    include 'connect.php';
+    $idteam = 1;
+    $sql = "select * from member where idteam=$idteam";
+    if ($result = mysqli_query($conn, $sql)) {
+        $member = mysqli_fetch_all($result);
+    }
     ?>
     <div class="scroll-up-btn">
         <i class="fas fa-angle-up"></i>
@@ -47,8 +55,8 @@
         <div class="max-width">
             <div class="home-content">
                 <div class="text-1">Xin chào, chúng tôi là: </div>
-                <div class="text-2"><?php echo $member[0][2]?>,</div>
-                <div class="text-2"><?php echo $member[1][2]?> </div>
+                <div class="text-2"><?php echo $member[0][2] ?>,</div>
+                <div class="text-2"><?php echo $member[1][2] ?> </div>
                 <div class="text-3">Chúng tôi đang là <span class="typing"></span></div>
                 <a href="#contact">Liên hệ với chúng tôi</a>
             </div>
@@ -60,19 +68,19 @@
         <div class="max-width">
             <h2 class="title">GIỚI THIỆU</h2>
             <div class="about-content1 about-content">
-                <div class="column left" >
-                    <img src="images/Quang.jpg"  alt="">
+                <div class="column left">
+                    <img src="images/Quang.jpg" alt="">
                 </div>
                 <div class="column right">
-                    <div class="text">Tôi là <?php echo $member[0][2]?> và tôi là <span class="typing-2"></span></div>
-                    <p><?php echo $member[0][6]?></p>
+                    <div class="text">Tôi là <?php echo $member[0][2] ?> và tôi là <span class="typing-2"></span></div>
+                    <p><?php echo $member[0][6] ?></p>
                     <a href="#">Tải xuống CV</a>
                 </div>
             </div>
             <div class="about-content2 about-content">
                 <div class="column left">
-                    <div class="text">Tôi là <?php echo $member[1][2]?> và tôi là <span class="typing-3"></span></div>
-                    <p><?php echo $member[1][6]?></p>
+                    <div class="text">Tôi là <?php echo $member[1][2] ?> và tôi là <span class="typing-3"></span></div>
+                    <p><?php echo $member[1][6] ?></p>
                     <a href="#">Tải xuống CV</a>
                 </div>
                 <div class="column right">
@@ -82,11 +90,11 @@
         </div>
     </section>
 
-    <?php   
-        $sql="select * from services where idteam=$idteam";
-        if($result=mysqli_query($conn,$sql)){
-            $services=mysqli_fetch_all($result);
-        }
+    <?php
+    $sql = "select * from services where idteam=$idteam";
+    if ($result = mysqli_query($conn, $sql)) {
+        $services = mysqli_fetch_all($result);
+    }
     ?>
     <!-- Trang dịch vụ  -->
     <section class="services" id="services">
@@ -119,11 +127,11 @@
         </div>
     </section>
 
-    <?php   
-        $sql="select * from skill where idteam=$idteam";
-        if($result=mysqli_query($conn,$sql)){
-            $skill=mysqli_fetch_all($result);
-        }
+    <?php
+    $sql = "select * from skill where idteam=$idteam";
+    if ($result = mysqli_query($conn, $sql)) {
+        $skill = mysqli_fetch_all($result);
+    }
     ?>
     <!-- Kỹ năng -->
     <section class="skills" id="skills">
@@ -180,21 +188,25 @@
                 </div>
             </div>
             <style>
-                .skills-content .right .html::before{
-                    width: <?php echo $skill[0][1] ?>%; 
+                .skills-content .right .html::before {
+                    width: <?php echo $skill[0][1] ?>%;
                 }
-                .skills-content .right .css::before{
+
+                .skills-content .right .css::before {
                     width: <?php echo $skill[0][2] ?>%;
                 }
-                .skills-content .right .js::before{
+
+                .skills-content .right .js::before {
                     width: <?php echo $skill[0][3] ?>%;
                 }
-                .skills-content .right .php::before{
+
+                .skills-content .right .php::before {
                     width: <?php echo $skill[0][4] ?>%;
                 }
-                .skills-content .right .mysql::before{
+
+                .skills-content .right .mysql::before {
                     width: <?php echo $skill[0][5] ?>%;
-                }   
+                }
             </style>
         </div>
     </section>
@@ -206,14 +218,14 @@
                 <div class="card">
                     <div class="box">
                         <img src="images/Phong.jpg" alt="">
-                        <div class="text"><?php echo $member[1][2]?></div>
+                        <div class="text"><?php echo $member[1][2] ?></div>
                         <p></p>
                     </div>
                 </div>
                 <div class="card">
                     <div class="box">
                         <img src="images/Quang.jpg" alt="">
-                        <div class="text"><?php echo $member[0][2]?></div>
+                        <div class="text"><?php echo $member[0][2] ?></div>
                         <p></p>
                     </div>
                 </div>
@@ -221,11 +233,11 @@
         </div>
     </section>
 
-    <?php   
-        $sql="select * from team where id=$idteam";
-        if($result=mysqli_query($conn,$sql)){
-            $contact=mysqli_fetch_all($result);
-        }
+    <?php
+    $sql = "select * from team where id=$idteam";
+    if ($result = mysqli_query($conn, $sql)) {
+        $contact = mysqli_fetch_all($result);
+    }
     ?>
     <!-- Trang liên hệ  -->
     <section class="contact" id="contact">
@@ -261,20 +273,20 @@
                 </div>
                 <div class="column right">
                     <div class="text">Nội dung</div>
-                    <form action="#">
+                    <form id="form-contact" action="#">
                         <div class="fields">
                             <div class="field name">
-                                <input id="yourname" type="text" placeholder="Tên" required>
+                                <input name="name" id="yourname" type="text" placeholder="Tên" required>
                             </div>
                             <div class="field email">
-                                <input id="email" type="email" placeholder="Email" required>
+                                <input name="email" id="email" type="email" placeholder="Email" required>
                             </div>
                         </div>
                         <div class="field">
-                            <input id="subject" type="text" placeholder="Tiêu đề" required>
+                            <input name="subject" id="subject" type="text" placeholder="Tiêu đề" required>
                         </div>
                         <div class="field textarea">
-                            <textarea id="message" cols="30" rows="10" placeholder="Tin nhắn..." required></textarea>
+                            <textarea name="message" id="message" cols="30" rows="10" placeholder="Tin nhắn..." required></textarea>
                         </div>
                         <div class="button" id="send">
                             <button type="submit">Gửi</button>
@@ -284,11 +296,54 @@
             </div>
         </div>
     </section>
-    
+
+
+
+   
     <!-- Thanh cuối trang  -->
+    <script>
+        let request;
+        $("#form-contact").submit(function(event) {
+            event.preventDefault();
+            if (request) {
+                request.abort();
+            }
+            let $form = $(this);
+            let $inputs = $form.find("input", "button", "textarea");
+            $inputs.prop("disabled", true);
+
+            // lấy data từ input
+            let serializedData = {
+                name: this.name.value,
+                email: this.email.value,
+                subject: this.subject.value,
+                message: this.message.value
+            };
+            waitingDialog.show('Đang gửi feedback...');
+            request = $.ajax({
+                url: "process_contact.php",
+                type: "post",
+                data: serializedData
+            });
+            request.done(() => {
+                request = undefined;
+                waitingDialog.hide();
+                toastr.success(`Cám ơn ${serializedData.name} đã gửi thông tin phản hồi`);
+                $inputs.prop("disabled", false);
+                $inputs.prop("value", "");
+                this.message.value = "";
+            })
+            request.fail(() => {
+                request = undefined;
+                waitingDialog.hide();
+                toastr.error(`Xin lỗi ${serializedData.name} thông tin phản hồi chưa thể gửi tới admin`);
+            })
+        })
+    </script>
     <footer>
         <span>Created By <a href="https://www.facebook.com/quang.mai.k8/">Mai Vinh Quang </a> | <a href="https://www.facebook.com/giaphong.ha.12/">Hà Gia Phong</a></span>
     </footer>
-    <script src="main.js"></script>
+    <script src="./main.js"></script>
 </body>
+
 </html>
