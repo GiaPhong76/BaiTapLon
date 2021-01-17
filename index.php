@@ -74,14 +74,14 @@
                 <div class="column right">
                     <div class="text">Tôi là <?php echo $member[0][2] ?> và tôi là <span class="typing-2"></span></div>
                     <p><?php echo $member[0][6] ?></p>
-                    <a href="#">Tải xuống CV</a>
+                    <a href="CV/CV_Quang.pdf" download>Tải xuống CV</a>
                 </div>
             </div>
             <div class="about-content2 about-content">
                 <div class="column left">
                     <div class="text">Tôi là <?php echo $member[1][2] ?> và tôi là <span class="typing-3"></span></div>
                     <p><?php echo $member[1][6] ?></p>
-                    <a href="#">Tải xuống CV</a>
+                    <a href="CV/CV_Phong.pdf" download>Tải xuống CV</a>
                 </div>
                 <div class="column right">
                     <img src="images/Phong.jpg" alt="">
