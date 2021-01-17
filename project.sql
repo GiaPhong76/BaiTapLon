@@ -42,7 +42,7 @@ CREATE TABLE `member` (
 --
 
 INSERT INTO `member` (`id`, `idteam`, `fullname`, `sex`, `birthday`, `phone`, `about`) VALUES
-(1, 1, 'Quang Béo ', 'Nam', '2000-12-01', '0915563292', 'Với hơn hai năm kinh nghiệm ở các vị trí Product Manager, Business Analyst, trong việc hỗ trợ nhóm Agile, tạo, sắp xếp mức độ ưu tiên và quản lý backlog; các chứng chỉ TOEIC 750, Google Adwards và bằng Thạc sỹ Quản trị kinh doanh; tôi mong muốn tận dụng các kỹ năng và kiến thức của mình để đóng góp cho công ty với vai trò là Product Manager.'),
+(1, 1, 'Mai Vinh Quang ', 'Nam', '2000-12-01', '0915563292', 'Với hơn hai năm kinh nghiệm ở các vị trí Product Manager, Business Analyst, trong việc hỗ trợ nhóm Agile, tạo, sắp xếp mức độ ưu tiên và quản lý backlog; các chứng chỉ TOEIC 750, Google Adwards và bằng Thạc sỹ Quản trị kinh doanh; tôi mong muốn tận dụng các kỹ năng và kiến thức của mình để đóng góp cho công ty với vai trò là Product Manager.'),
 (2, 1, 'Hà Gia Phong', 'Nam', '2000-06-07', '0336231066', 'Thuộc tuýp người giải quyết vấn đề (problem-solver) và đam mê kinh doanh trực tuyến, muốn tham gia một nhóm các lập trình viên có cùng chí hướng. Đang tìm kiếm một vị trí phù hợp tại công ty có các dự án với độ thử thách cao, nơi là hiệu suất làm việc được công nhận và khen thưởng xứng đáng.');
 
 -- --------------------------------------------------------

@@ -200,7 +200,7 @@ section .title::after {
 
 .home {
     display: flex;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.6)), url(images/header-background.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.7)), url(images/header-background.jpg);
     height: 100vh;
     color: #fff;
     min-height: 500px;
