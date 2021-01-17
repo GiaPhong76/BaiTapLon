@@ -15,10 +15,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" ></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="./bootstrap-waitingfor.min.js"></script>
-
 </head>
 
 <body>
@@ -319,7 +317,7 @@
                 subject: this.subject.value,
                 message: this.message.value
             };
-            waitingDialog.show('Đang gửi feedback...');
+            toastr.info('Đang thực hiện ...',  {timeOut: 500000});
             request = $.ajax({
                 url: "process_contact.php",
                 type: "post",
@@ -327,15 +325,15 @@
             });
             request.done(() => {
                 request = undefined;
-                waitingDialog.hide();
-                toastr.success(`Cám ơn ${serializedData.name} đã gửi thông tin phản hồi`);
+                toastr.clear();
+                toastr.success(`Cám ơn ${serializedData.name} đã liên hệ với chúng tôi`);
                 $inputs.prop("disabled", false);
                 $inputs.prop("value", "");
                 this.message.value = "";
             })
             request.fail(() => {
                 request = undefined;
-                waitingDialog.hide();
+                toastr.clear();
                 toastr.error(`Xin lỗi ${serializedData.name} thông tin phản hồi chưa thể gửi tới admin`);
             })
         })
