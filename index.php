@@ -146,7 +146,7 @@
                         <li>Tham gia thảo luận với khách hàng để làm rõ những gì họ muốn.<br></li>
                         <li>Thiết kế prototypes cho ứng dụng và trang web.<br></li>
                     </ul>
-                    <a href="#">Đọc thêm</a>
+                    <a href="#about">Đọc thêm</a>
                 </div>
                 <div class="column right">
                     <div class="text">Kỹ năng </div>
@@ -325,6 +325,7 @@
                 type: "post",
                 data: serializedData
             });
+            
             request.done(() => {
                 request = undefined;
                 waitingDialog.hide();

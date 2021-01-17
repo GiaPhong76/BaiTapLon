@@ -39,7 +39,6 @@ if(isset($_POST['name']) && isset($_POST['email']) && isset($_POST['subject']) &
         $sql = "insert into message(idteam, name, email, subject, message) values(1,'$name', '$email', '$subject', '$message')";
         echo $sql;
         mysqli_query($conn, $sql);
-
     } catch (Exception $e) {
         echo 'Mailer Error: ' . $mail->ErrorInfo;
     }
